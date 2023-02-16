@@ -111,6 +111,7 @@ class TestDemangler(unittest.TestCase):
     def test_template_param(self):
         self.assertDemangles('_ZN1fIciEEvT_PT0_', 'void f<char, int>(char, int*)')
         self.assertParses('_ZN1fIciEEvT_PT0', None)
+        self.assertDemangles('_ZN1f1bINS_1wEEEvT_I3fooE', 'void f::b<f::w>(f::w<foo>)')
 
     def test_substitution(self):
         self.assertDemangles('_Z3fooIEvS_', 'void foo<>(foo)')
