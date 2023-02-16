@@ -622,7 +622,7 @@ def _parse_name(cursor, is_nested=False):
         node = QualNode('abi', node, frozenset(abi_tags))
 
     if not is_nested and cursor.accept('I') and (
-            node.kind in ('name', 'oper', 'oper_cast') or
+            node.kind in ('name', 'oper', 'oper_cast', 'tpl_param') or
             match.group('std_prefix') is not None or
             match.group('std_name') is not None or
             match.group('substitution') is not None):
